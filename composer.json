@@ -22,8 +22,9 @@
         "tws/tws-sdk-php": "dev-master"
     },
     "autoload": {
-        "psr-0": {
-            "Tws": "src/"
-        }
+        "classmap": 
+                [
+             "src/"
+                ]
     }
 }
