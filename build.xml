@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="aws-sdk-for-php" default="test">
+    <property name="dir.output" value="${project.basedir}/build/artifacts" />
+     <fileset id="src_files" dir="${project.basedir}/src" includes="**/*.php" />
+    <target name="clean" description="Deletes build artifacts">
+        <delete dir="${dir.output}"/>
+    </target>
+   <target name="prepare" depends="clean">
+        <mkdir dir="${dir.output}"/>
+        <mkdir dir="${dir.output}/logs" />
+    </target>
+
+    <target name="phpcs">
+        <delete dir="${dir.output}/phpcs" includeemptydirs="true" verbose="true" failonerror="true" />
+        <mkdir dir="${dir.output}/phpcs" />
+        <!-- <phpcodesniffer></phpcodesniffer> -->
+    </target>
+
+    <target name="phpmd">
+        <delete dir="${dir.output}/phpmd" includeemptydirs="true" verbose="true" failonerror="true" />
+        <mkdir dir="${dir.output}/phpmd" />
+        <phpmd>
+            <fileset refid="src_files" />
+            <formatter type="html" outfile="${dir.output}/phpmd/phpmd.html"/>
+            <formatter type="xml" outfile="${dir.output}/phpmd/phpmd.xml"/>
+        </phpmd>
+    </target>
+
+    <target name="phpcpd">
+        <delete dir="${dir.output}/phpcpd" includeemptydirs="true" verbose="true" failonerror="true" />
+        <mkdir dir="${dir.output}/phpcpd" />
+        <phpcpd>
+            <fileset refid="src_files" />
+            <formatter type="pmd" outfile="${dir.output}/phpcpd/pmd.xml" />
+            <formatter type="default" outfile="${dir.output}/phpcpd/default.xml" />
+        </phpcpd>
+    </target>
+
+    <target name="phplint">
+        <phplint>
+            <fileset refid="src_files" />
+        </phplint>
+    </target>
+</project>
