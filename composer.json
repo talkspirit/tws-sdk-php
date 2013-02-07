@@ -1,0 +1,29 @@
+{
+    "name": "tws/tws-sdk-php",
+    "homepage": "http://connect.talkspirit.com/",
+    "description":"TWS SDK for PHP",
+    "keywords":["tws","talkspirit","sdk"],
+    "type":"library",
+    "authors":[
+        {
+            "name":"talkSpirit Web Services",
+            "homepage":"http://connect.talkspirit.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/talkspirit/tws-sdk-php"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "guzzle/guzzle": "~3.1.2",
+        "tws/tws-sdk-php": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Tws": "src/"
+        }
+    }
+}

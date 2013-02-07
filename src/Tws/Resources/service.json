@@ -1,0 +1,97 @@
+{
+    "name": "Tws",
+    "apiVersion": "2013-02-07",
+    "baseUrl": "",
+    "description": "Tws is an API that allows you to use talkSpirit API",
+    "operations": {
+        "getUsers": {
+            "httpMethod": "GET",
+            "uri": "users/search",
+            "summary": "Gets a list of users",
+            "responseClass": "GetUsersOutput"
+        },
+        "addUser": {
+            "httpMethod": "POST",
+            "uri": "/users/default",
+            "summary": "Creates a new user",
+            "responseClass": "CreateUserOutput",
+            "parameters": {
+                "name": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "firstname": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "email": {
+                    "location": "json",
+                    "type": "string"
+                }
+            }
+        },
+        "getUser": {
+            "httpMethod": "GET",
+            "uri": "users/{id}",
+            "summary": "Retrieves a single user",
+            "responseClass": "GetUserOutput",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "User to retrieve by ID",
+                    "required": true
+                }
+            }
+        },
+        "deleteUser": {
+            "httpMethod": "DELETE",
+            "uri": "users/{id}",
+            "summary": "Deletes a user",
+            "responseClass": "DeleteUserOutput",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "User to delete by ID",
+                    "required": true
+                }
+            }
+        }
+    },
+    "models": {
+        "User": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "email": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "displayname": {
+                    "type": "string",
+                    "location": "json"
+                }
+            },
+           "GetUsersOutput": {
+                "type": "array",
+                "items": {
+                    "$ref": "User"
+                }
+            },
+            "GetUserOutput": {
+                "$ref": "User"
+            },
+            "DeleteUserOutput": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "location": "statusCode",
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}
