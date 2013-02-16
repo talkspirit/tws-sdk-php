@@ -30,6 +30,12 @@
                 }
             }
         },
+        "getSelf": {
+            "httpMethod": "GET",
+            "uri": "users/default",
+            "summary": "Retrieves his profile",
+            "responseClass": "GetUserselfOutput"
+        },
         "getUser": {
             "httpMethod": "GET",
             "uri": "users/{id}",

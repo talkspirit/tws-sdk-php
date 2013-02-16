@@ -22,9 +22,8 @@
         "tws/tws-sdk-php": "dev-master"
     },
     "autoload": {
-        "classmap": 
-                [
-             "src/"
-                ]
+        "psr-0": { "Tws": "src/" }
     }
 }
+
+{ "Doctrine\\MongoDB": "lib/" }
