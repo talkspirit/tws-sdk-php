@@ -51,19 +51,35 @@ HTTP basics
 require_once 'vendor/autoload.php';
 
 use Tws\Common\TwsClient;
+use Tws\Common\TwsConnect;
+use Tws\Exception\TwsConnectException;
+use Guzzle\Http\Exception\ClientErrorResponseException;
+use Guzzle\Service\Exception\ValidationException;
 
 $config = array('api_url' => 'http://*************/api/v1/',
                 'consumer_key' => '**********',
-                'consumer_secret' => '*************',
-                'token' => '**************');
+                'consumer_secret' => '*************');
 
-$client = TwsClient::factory($config);
-
+$auth = new TwsConnect($config);
 // get the token of the user
-$response = $client->post('access_token')->setAuth('{{email}}', '{{paswword}}');
-$arrayInfo = explode('=', $response->getBody());
-$token = $arrayInfo[1];
+try{
+    $auth->connect('no-reply@talkspirit.fr', 'password');
+    if(!$auth->checkValidToken()) {
+        echo "Token not valid";
+        exit;
+    }
 
+    $client = TwsClient::factory($auth->getConfig());
+    // get the profile of the connected user
+    $me = $client->getMe();
 
-// get the profile of the connected user
-$me = $client->getSelf();
+    print_r($me);
+
+} catch (TwsConnectException $e) {
+    echo $e->getMessage().PHP_EOL;
+}  catch (ClientErrorResponseException $e) {
+    echo $e->getMessage().PHP_EOL;
+} catch (ValidationException $e) {
+    echo $e->getMessage().PHP_EOL;
+}
+

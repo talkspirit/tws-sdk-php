@@ -11,20 +11,16 @@ use Guzzle\Common\Event;
 class AuthPlugin implements EventSubscriberInterface {
     private $config;
 
-    function __construct($_config)
-    {
+    function __construct($_config) {
         $this->config = $_config;
     }
 
-    public static function getSubscribedEvents()
-    {
+    public static function getSubscribedEvents() {
         return array('request.before_send' => 'onRequestBeforeSend');
     }
 
-    public function onRequestBeforeSend(Event $event)
-    {
+    public function onRequestBeforeSend(Event $event) {
         $event['request']->setHeader('Consumer-Key', $this->config['consumer_key']);
-        $event['request']->setheader('Content-Type', 'application/json');
         $event['request']->setheader('Accept', 'application/json');
 
         if(isset($this->config['token'])) {

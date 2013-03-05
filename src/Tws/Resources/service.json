@@ -4,13 +4,30 @@
     "baseUrl": "",
     "description": "Tws is an API that allows you to use talkSpirit API",
     "operations": {
+        "postMedia": {
+            "httpMethod": "POST",
+            "uri": "media/default",
+            "summary": "Add a new Media",
+            "parameters": {
+                "file": {
+                    "location": "postFile",
+                    "type": "string"
+                }
+            }
+        },
         "getUsers": {
             "httpMethod": "GET",
             "uri": "users/search",
             "summary": "Gets a list of users",
             "responseClass": "GetUsersOutput"
         },
-        "addUser": {
+        "getMe": {
+            "httpMethod": "GET",
+            "uri": "users/default",
+            "summary": "Retrieves his profile",
+            "responseClass": "GetUserselfOutput"
+        },
+        "postUser": {
             "httpMethod": "POST",
             "uri": "/users/default",
             "summary": "Creates a new user",
@@ -29,12 +46,6 @@
                     "type": "string"
                 }
             }
-        },
-        "getSelf": {
-            "httpMethod": "GET",
-            "uri": "users/default",
-            "summary": "Retrieves his profile",
-            "responseClass": "GetUserselfOutput"
         },
         "getUser": {
             "httpMethod": "GET",
@@ -80,7 +91,7 @@
                     "location": "json"
                 }
             },
-           "GetUsersOutput": {
+            "GetUsersOutput": {
                 "type": "array",
                 "items": {
                     "$ref": "User"

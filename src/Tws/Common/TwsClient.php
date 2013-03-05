@@ -6,6 +6,7 @@ use Guzzle\Common\Collection;
 use Guzzle\Service\Client;
 use Guzzle\Service\Description\ServiceDescription;
 use Tws\Plugin\Auth\AuthPlugin;
+use Tws\Common\TwsConnect;
 
 /**
  * @see http://guzzlephp.org/tour/building_services.html
@@ -15,7 +16,7 @@ class TwsClient extends Client {
     /**
      * Factory method to create a new TwsClient
      *
-     * @param array|Collection $config Configuration data
+     * @param TwsConnect $twsConnect Configuration data
      *
      * @return self
      */
@@ -33,4 +34,5 @@ class TwsClient extends Client {
         $client->addSubscriber(new AuthPlugin($config));
         return $client;
     }
+
 }
