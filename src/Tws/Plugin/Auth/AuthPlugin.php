@@ -21,8 +21,9 @@ class AuthPlugin implements EventSubscriberInterface {
 
     public function onRequestBeforeSend(Event $event) {
         $event['request']->setHeader('Consumer-Key', $this->config['consumer_key']);
-        $event['request']->setheader('Accept', 'application/json');
-
+        if(!is_array($event['request']->getheader('Accept'))) {
+            $event['request']->setheader('Accept', 'application/json');
+        }
         if(isset($this->config['token'])) {
             $this->addAuthorizationHeader($event);
         }
