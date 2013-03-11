@@ -56,6 +56,11 @@ class TwsConnect {
         }
     }
 
+    public function setToken($token) {
+        $this->config['token'] = $token;
+        return $this;
+    }
+
     /**
      * Method for check if connection is OK
      *
