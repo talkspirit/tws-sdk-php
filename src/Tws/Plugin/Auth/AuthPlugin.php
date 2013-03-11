@@ -24,7 +24,8 @@ class AuthPlugin implements EventSubscriberInterface {
         if(!is_array($event['request']->getheader('Accept'))) {
             $event['request']->setheader('Accept', 'application/json');
         }
-        if(isset($this->config['token'])) {
+        $header = $event['request']->getheader('Authorization');
+        if(isset($this->config['token']) && empty($header)) {
             $this->addAuthorizationHeader($event);
         }
     }
