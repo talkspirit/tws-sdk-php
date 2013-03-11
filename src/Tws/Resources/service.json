@@ -3,6 +3,9 @@
     "apiVersion": "2013-02-07",
     "baseUrl": "",
     "description": "Tws is an API that allows you to use talkSpirit API",
+    "includes":[
+        "applications.json"
+    ],
     "operations": {
         "getPublicUserActivity": {
             "httpMethod": "Get",

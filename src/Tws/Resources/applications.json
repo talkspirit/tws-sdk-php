@@ -1,0 +1,53 @@
+  {
+    "operations": {
+        "postApplication": {
+                "httpMethod": "POST",
+                "uri": "osapi/applications/default",
+                "summary": "Add a new application",
+                "parameters": {
+                    "application": {
+                        "type": "object",
+                        "required": true,
+                        "location": "json",
+                        "properties": {
+                            "url": {
+                                "location": "json",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+        "getApplications": {
+            "httpMethod": "GET",
+            "uri": "osapi/applications?{option}",
+            "summary": "Get the applications",
+            "responseClass": "getApplicationsOutput",
+            "parameters": {
+                "option": {
+                    "location": "uri",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        },
+        "getApplication": {
+            "httpMethod": "GET",
+            "uri": "osapi/application/{id}?{option}",
+            "summary": "Get the applications",
+            "responseClass": "Application",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "Application Id",
+                    "required": true
+                },
+                "option": {
+                    "location": "uri",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        }
+    }
+}
