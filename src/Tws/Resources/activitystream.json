@@ -1,0 +1,69 @@
+{
+    "operations": {
+        "getPublicUserActivity": {
+            "httpMethod": "Get",
+            "uri": "/users/{user_id}/activitystream?{option}",
+            "summary": "Activities - Get a user activity (public)",
+            "parameters": {
+                "user_id": {
+                    "location": "uri",
+                    "description": "User to retrieve by ID",
+                    "required": true
+                },
+                "option": {
+                    "location": "uri",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        },
+        "getPrivateUserActivity": {
+            "httpMethod": "Get",
+            "uri": "/users/default/activitystream?{option}",
+            "summary": "Activities - Get a user activity (private)",
+            "parameters": {
+                "option": {
+                    "location": "uri",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        },
+        "getActivitystream": {
+            "httpMethod": "Get",
+            "uri": "/activitystream?{option}",
+            "summary": "Activities - Get activity stream",
+            "parameters": {
+                "option": {
+                    "location": "uri",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        },
+        "getNotification": {
+            "httpMethod": "Get",
+            "uri": "/notifications?{option}",
+            "summary": "Activities - Get notifications",
+            "parameters": {
+                "option": {
+                    "location": "uri",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        },
+        "getNotificationCount": {
+            "httpMethod": "Get",
+            "uri": "/notifications/count?{option}",
+            "summary": "Activities - Get notifications count",
+            "parameters": {
+                "option": {
+                    "location": "uri",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        }
+    }
+}
