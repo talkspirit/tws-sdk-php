@@ -1,0 +1,33 @@
+{
+    "operations": {
+        "postMedia": {
+            "httpMethod": "POST",
+            "uri": "media/default",
+            "summary": "Add a new Media",
+            "responseClass": "Media",
+            "parameters": {
+                "file": {
+                    "location": "postFile",
+                    "type": "string",
+                    "description": "File path",
+                    "required": true
+                }
+            }
+        }
+    },
+    "models": {
+        "Media": {
+            "type": "object",
+            "properties": {
+                "media": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "status": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
