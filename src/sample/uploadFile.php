@@ -24,7 +24,6 @@ try{
     $retVal = $client->postMedia(array('file' => '@/home/bm/Downloads/Etude_Lecko_RSE_tome5_v1_130201.31.pdf'));
 
     print_r($retVal->get('media'));
-    echo "-----------".get_class($retVal)."+\n";
 } catch (TwsConnectException $e) {
     echo $e->getMessage().PHP_EOL;
 } catch (ClientErrorResponseException $e) {
