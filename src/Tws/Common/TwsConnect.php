@@ -2,10 +2,12 @@
 
 namespace Tws\Common;
 
-use Tws\Common\TwsClient;
-use Tws\Plugin\Auth\AuthPlugin;
 use Guzzle\Http\Exception\ClientErrorResponseException;
+use Guzzle\Service\Resource\Model;
+
+use Tws\Common\TwsClient;
 use Tws\Exception\TwsConnectException;
+use Tws\Plugin\Auth\AuthPlugin;
 
 /**
  * @see http://guzzlephp.org/tour/building_services.html
@@ -70,10 +72,10 @@ class TwsConnect {
         $client = TwsClient::factory($this->config);
         try{
             $me = $client->getMe();
-            if(isset($me['user'])) {
+            if($me instanceof Model) {
                 return true;
             } else {
-                return false;
+                throw new TwsConnectException("Error output Type is :".get_class($me));
             }
         } catch (ClientErrorResponseException $e) {
             throw new TwsConnectException($e->getMessage());

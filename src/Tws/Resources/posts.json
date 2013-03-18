@@ -4,7 +4,6 @@
             "httpMethod": "Get",
             "uri": "discussions/{discussion-id}/posts?{option}",
             "summary": "Posts - Get posts",
-            "responseClass": "Post",
             "parameters": {
                 "discussion-id": {
                     "location": "uri",
@@ -22,7 +21,6 @@
             "httpMethod": "Get",
             "uri": "posts/search?{option}",
             "summary": "Posts - Get posts (search)",
-            "responseClass": "Post",
             "parameters": {
                 "option": {
                     "location": "uri",
@@ -35,7 +33,6 @@
             "httpMethod": "Get",
             "uri": "discussions/{discussion-id}/posts/{post-id}",
             "summary": "Posts - Get posts",
-            "responseClass": "Post",
             "parameters": {
                 "discussion-id": {
                     "location": "uri",
@@ -47,34 +44,6 @@
                     "description": "Post to retrieve by ID",
                     "required": true
                 }
-            }
-        }
-    },
-    "models": {
-        "Post": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "title": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "content": {
-                    "type": "string",
-                    "location": "json"
-                }
-            },
-        "GetPostsOutput": {
-                "type": "array",
-                "items": {
-                    "$ref": "Post"
-                }
-            },
-        "GetPostOutput": {
-                "$ref": "Post"
             }
         }
     }

@@ -22,10 +22,6 @@
                 "media": {
                     "location": "json",
                     "type": "string"
-                },
-                "status": {
-                    "location": "statusCode",
-                    "type": "integer"
                 }
             }
         }

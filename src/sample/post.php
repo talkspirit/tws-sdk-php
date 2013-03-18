@@ -2,11 +2,12 @@
 
 require_once 'vendor/autoload.php';
 
+use Guzzle\Http\Exception\ClientErrorResponseException;
+use Guzzle\Service\Exception\ValidationException;
+use Guzzle\Service\Resource\Model;
 use Tws\Common\TwsClient;
 use Tws\Common\TwsConnect;
 use Tws\Exception\TwsConnectException;
-use Guzzle\Http\Exception\ClientErrorResponseException;
-use Guzzle\Service\Exception\ValidationException;
 
 $config = array('api_url' => 'http://t23.api.bm.onu/api/v1/',
                 'consumer_key' => 'consomer_key',
@@ -20,9 +21,10 @@ try{
 
     // get tws client
     $client = TwsClient::factory($auth->getConfig());
+
     // method for activity stream
     $retVal = $client->getPost(array('discussion-id' => "community-open",
-                                            'post-id' => "post1"));
+                                            'post-id' => "article"));
     print_r($retVal);
 } catch (TwsConnectException $e) {
     echo $e->getMessage().PHP_EOL;

@@ -2,7 +2,7 @@
     "operations": {
         "getPublicUserActivity": {
             "httpMethod": "Get",
-            "uri": "/users/{user_id}/activitystream?{option}",
+            "uri": "users/{user_id}/activitystream?{option}",
             "summary": "Activities - Get a user activity (public)",
             "parameters": {
                 "user_id": {
@@ -19,7 +19,7 @@
         },
         "getPrivateUserActivity": {
             "httpMethod": "Get",
-            "uri": "/users/default/activitystream?{option}",
+            "uri": "users/default/activitystream?{option}",
             "summary": "Activities - Get a user activity (private)",
             "parameters": {
                 "option": {
@@ -31,7 +31,7 @@
         },
         "getActivitystream": {
             "httpMethod": "Get",
-            "uri": "/activitystream?{option}",
+            "uri": "activitystream?{option}",
             "summary": "Activities - Get activity stream",
             "parameters": {
                 "option": {
@@ -43,7 +43,7 @@
         },
         "getNotification": {
             "httpMethod": "Get",
-            "uri": "/notifications?{option}",
+            "uri": "notifications?{option}",
             "summary": "Activities - Get notifications",
             "parameters": {
                 "option": {
@@ -55,7 +55,7 @@
         },
         "getNotificationCount": {
             "httpMethod": "Get",
-            "uri": "/notifications/count?{option}",
+            "uri": "notifications/count?{option}",
             "summary": "Activities - Get notifications count",
             "parameters": {
                 "option": {

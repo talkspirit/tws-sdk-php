@@ -10,13 +10,13 @@
             "httpMethod": "GET",
             "uri": "users/default",
             "summary": "Retrieves his profile",
-            "responseClass": "GetUserselfOutput"
+            "responseClass": "GetUserOutput"
         },
         "postUser": {
             "httpMethod": "POST",
             "uri": "/users/default",
             "summary": "Creates a new user",
-            "responseClass": "CreateUserOutput",
+            "responseClass": "GetUserOutput",
             "parameters": {
                 "name": {
                     "location": "json",
@@ -60,38 +60,31 @@
         }
     },
     "models": {
-        "User": {
+        "GetUsersOutput": {
             "type": "object",
             "properties": {
-                "name": {
+                "users": {
                     "location": "json",
                     "type": "string"
-                },
-                "email": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "displayname": {
-                    "type": "string",
-                    "location": "json"
                 }
-            },
-        "GetUsersOutput": {
-                "type": "array",
-                "items": {
-                    "$ref": "User"
-                }
-            },
+            }
+        },
         "GetUserOutput": {
-                "$ref": "User"
-            },
+            "type": "object",
+            "properties": {
+                "user": {
+                    "location": "json",
+                    "type": "string"
+                }
+            }
+
+        },
         "DeleteUserOutput": {
-                "type": "object",
-                "properties": {
-                    "status": {
-                        "location": "statusCode",
-                        "type": "integer"
-                    }
+            "type": "object",
+            "properties": {
+                "status": {
+                    "location": "statusCode",
+                    "type": "integer"
                 }
             }
         }
