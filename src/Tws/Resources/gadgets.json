@@ -1,11 +1,12 @@
   {
     "operations": {
-        "postApplication": {
+        "postGadget": {
                 "httpMethod": "POST",
-                "uri": "osapi/applications/default",
-                "summary": "Add a new application",
+                "uri": "osapi/gadgets/default",
+                "summary": "Add a new gadget",
+                "responseClass": "GetGadgetOutput",
                 "parameters": {
-                    "application": {
+                    "gadget": {
                         "type": "object",
                         "required": true,
                         "location": "json",
@@ -18,11 +19,10 @@
                     }
                 }
             },
-        "getApplications": {
+        "getGadgets": {
             "httpMethod": "GET",
-            "uri": "osapi/applications?{option}",
-            "summary": "Get the applications",
-            "responseClass": "getApplicationsOutput",
+            "uri": "osapi/gadgets?{option}",
+            "summary": "Get the gadgets",
             "parameters": {
                 "option": {
                     "location": "uri",
@@ -31,21 +31,31 @@
                 }
             }
         },
-        "getApplication": {
+        "getGadget": {
             "httpMethod": "GET",
-            "uri": "osapi/application/{id}?{option}",
-            "summary": "Get the applications",
-            "responseClass": "Application",
+            "uri": "osapi/gadgets/{id}?{option}",
+            "summary": "Get the gadgets",
             "parameters": {
                 "id": {
                     "location": "uri",
-                    "description": "Application Id",
+                    "description": "Gadget Id",
                     "required": true
                 },
                 "option": {
                     "location": "uri",
                     "description": "additional parameters see documentation",
                     "required": false
+                }
+            }
+        }
+    },
+    "models": {
+        "GetGadgetOutput": {
+            "type": "object",
+            "properties": {
+                "gadget": {
+                    "location": "json",
+                    "type": "string"
                 }
             }
         }
