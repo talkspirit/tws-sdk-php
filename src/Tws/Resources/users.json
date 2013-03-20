@@ -3,7 +3,7 @@
         "getUsers": {
             "httpMethod": "GET",
             "uri": "users/search",
-            "responseClass": "GetUsersOutput"
+            "responseClass": "GetUsersOutput",
             "summary": "Gets a list of users",
             "parameters": {
                 "username": {
