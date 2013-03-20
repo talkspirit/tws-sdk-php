@@ -3,3 +3,4 @@ composer.lock
 gadgets.php
 tws-sdk-php.sublime-project
 tws-sdk-php.sublime-workspace
+.tags*

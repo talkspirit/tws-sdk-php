@@ -8,6 +8,6 @@
         "gadgets.json",
         "media.json",
         "posts.json",
-        "user.json"
+        "users.json"
     ]
 }
