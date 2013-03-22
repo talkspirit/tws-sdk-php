@@ -21,19 +21,30 @@
             },
         "getGadgets": {
             "httpMethod": "GET",
-            "uri": "osapi/gadgets?{option}",
+            "uri": "osapi/gadgets",
             "summary": "Get the gadgets",
             "parameters": {
-                "option": {
-                    "location": "uri",
-                    "description": "additional parameters see documentation",
-                    "required": false
+                "url": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "consumer_key": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "from": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "string"
                 }
             }
         },
         "getGadget": {
             "httpMethod": "GET",
-            "uri": "osapi/gadgets/{id}?{option}",
+            "uri": "osapi/gadgets/{id}",
             "summary": "Get the gadgets",
             "parameters": {
                 "id": {
@@ -41,8 +52,8 @@
                     "description": "Gadget Id",
                     "required": true
                 },
-                "option": {
-                    "location": "uri",
+                "status": {
+                    "location": "query",
                     "description": "additional parameters see documentation",
                     "required": false
                 }
