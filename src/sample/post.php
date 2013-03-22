@@ -11,7 +11,7 @@ use Tws\Exception\TwsConnectException;
 
 $config = array('api_url' => 'http://t23.api.bm.onu/api/v1/',
                 'consumer_key' => 'consomer_key',
-                'consumer_secret' => 'consumer_secret',);
+                'consumer_secret' => 'consumer_secret');
 
 $auth = new TwsConnect($config);
 // get the token of the user
