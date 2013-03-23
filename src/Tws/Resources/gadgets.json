@@ -5,7 +5,7 @@
                 "uri": "osapi/gadgets/authorize/{token_key}",
                 "summary": "Authorize the application",
                 "parameters" : {
-                    "token": {
+                    "token_key": {
                         "location": "uri",
                         "description": "Token key",
                         "required": true
@@ -14,7 +14,7 @@
             },
         "postGadget": {
                 "httpMethod": "POST",
-                "uri": "osapi/gadgets/default",
+                "uri": "osapi/gadgets/default",ts
                 "summary": "Add a new gadget",
                 "responseClass": "GetGadgetOutput",
                 "parameters": {
