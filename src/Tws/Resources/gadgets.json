@@ -1,5 +1,17 @@
   {
     "operations": {
+        "postAuhtorizeGadget": {
+                "httpMethod": "POST",
+                "uri": "osapi/gadgets/authorize/{token_key}",
+                "summary": "Authorize the application",
+                "parameters" : {
+                    "token": {
+                        "location": "uri",
+                        "description": "Token key",
+                        "required": true
+                    }
+                }
+            },
         "postGadget": {
                 "httpMethod": "POST",
                 "uri": "osapi/gadgets/default",
