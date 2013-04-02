@@ -14,7 +14,7 @@
             },
         "postGadget": {
                 "httpMethod": "POST",
-                "uri": "osapi/gadgets/default",ts
+                "uri": "osapi/gadgets/default",
                 "summary": "Add a new gadget",
                 "responseClass": "GetGadgetOutput",
                 "parameters": {
@@ -68,6 +68,18 @@
                     "location": "query",
                     "description": "additional parameters see documentation",
                     "required": false
+                }
+            }
+        },
+        "deleteGadget": {
+            "httpMethod": "DELETE",
+            "uri": "osapi/gadgets/{id}",
+            "summary": "Get the gadgets",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "Gadget Id",
+                    "required": true
                 }
             }
         }
