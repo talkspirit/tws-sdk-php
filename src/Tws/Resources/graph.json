@@ -1,0 +1,29 @@
+{
+    "operations": {
+        "getGraphSearch": {
+            "httpMethod": "GET",
+            "uri": "graph/search",
+            "summary": "Social graph - Get graph",
+            "parameters": {
+                "limit": {
+                    "location": "query",
+                    "type": "string",
+                    "description": "Limit",
+                    "required": false
+                },
+                "type": {
+                    "location": "query",
+                    "type": "string",
+                    "description": "type corresponds to the type of post in the discussion or the id of the addon: ideas, problemes, questions, articles (for the type of post in the discussion), microblog",
+                    "required": false
+                },
+                "sort": {
+                    "location": "query",
+                    "type": "string",
+                    "description": "lastdate: last activity in the item sort by activity otherwise",
+                    "required": false
+                }
+            }
+        }
+    }
+}

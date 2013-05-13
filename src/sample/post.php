@@ -25,7 +25,7 @@ try{
     // method for activity stream
     $retVal = $client->getPost(array('discussion-id' => "community-open",
                                             'post-id' => "article"));
-    print_r($retVal);
+    print_r($retVal->getResponse( ));
 } catch (TwsConnectException $e) {
     echo $e->getMessage().PHP_EOL;
 } catch (ClientErrorResponseException $e) {

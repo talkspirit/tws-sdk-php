@@ -6,6 +6,9 @@
     "includes":[
         "activitystream.json",
         "gadgets.json",
+        "discussions.json",
+        "graph.json",
+        "group.json",
         "media.json",
         "posts.json",
         "users.json"

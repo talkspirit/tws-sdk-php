@@ -48,21 +48,13 @@
         },
         "postUser": {
             "httpMethod": "POST",
-            "uri": "/users/default",
+            "uri": "users/default",
             "summary": "Creates a new user",
             "responseClass": "GetUserOutput",
             "parameters": {
-                "name": {
+                "user": {
                     "location": "json",
-                    "type": "string"
-                },
-                "firstname": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "email": {
-                    "location": "json",
-                    "type": "string"
+                    "type": "array"
                 }
             }
         },
@@ -113,6 +105,10 @@
                 "user": {
                     "location": "json",
                     "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
                 }
             }
 
