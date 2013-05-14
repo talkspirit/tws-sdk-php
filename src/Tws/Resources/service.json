@@ -10,5 +10,12 @@
         "media.json",
         "posts.json",
         "user.json"
-    ]
+    ],
+    "operations": {
+        "status": {
+            "httpMethod": "GET",
+            "uri": "status",
+            "summary": "Tetreez Information status"
+        }
+    }
 }

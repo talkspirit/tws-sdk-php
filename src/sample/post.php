@@ -1,5 +1,4 @@
 <?php
-
 require_once 'vendor/autoload.php';
 
 use Guzzle\Http\Exception\ClientErrorResponseException;
@@ -15,17 +14,22 @@ $config = array('api_url' => 'http://t23.api.bm.onu/api/v1/',
 
 $auth = new TwsConnect($config);
 // get the token of the user
-try{
+try {
     $auth->connect('no-reply@talkspirit.fr', 'password');
     $auth->checkValidToken();
 
     // get tws client
     $client = TwsClient::factory($auth->getConfig());
 
+    $retVal = $client->getStatus();
+
+    print_r($retVal->getResponse());
+
     // method for activity stream
     $retVal = $client->getPost(array('discussion-id' => "community-open",
                                             'post-id' => "article"));
     print_r($retVal->getResponse( ));
+
 } catch (TwsConnectException $e) {
     echo $e->getMessage().PHP_EOL;
 } catch (ClientErrorResponseException $e) {
