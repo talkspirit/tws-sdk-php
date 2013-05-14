@@ -1,0 +1,98 @@
+  {
+    "operations": {
+        "postAuhtorizeGadget": {
+                "httpMethod": "POST",
+                "uri": "osapi/gadgets/authorize/{token_key}",
+                "summary": "Authorize the application",
+                "parameters" : {
+                    "token_key": {
+                        "location": "uri",
+                        "description": "Token key",
+                        "required": true
+                    }
+                }
+            },
+        "postGadget": {
+                "httpMethod": "POST",
+                "uri": "osapi/gadgets/default",
+                "summary": "Add a new gadget",
+                "responseClass": "GetGadgetOutput",
+                "parameters": {
+                    "gadget": {
+                        "type": "object",
+                        "required": true,
+                        "location": "json",
+                        "properties": {
+                            "url": {
+                                "location": "json",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+        "getGadgets": {
+            "httpMethod": "GET",
+            "uri": "osapi/gadgets",
+            "summary": "Get the gadgets",
+            "parameters": {
+                "url": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "consumer_key": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "from": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "string"
+                }
+            }
+        },
+        "getGadget": {
+            "httpMethod": "GET",
+            "uri": "osapi/gadgets/{id}",
+            "summary": "Get the gadgets",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "Gadget Id",
+                    "required": true
+                },
+                "status": {
+                    "location": "query",
+                    "description": "additional parameters see documentation",
+                    "required": false
+                }
+            }
+        },
+        "deleteGadget": {
+            "httpMethod": "DELETE",
+            "uri": "osapi/gadgets/{id}",
+            "summary": "Get the gadgets",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "Gadget Id",
+                    "required": true
+                }
+            }
+        }
+    },
+    "models": {
+        "GetGadgetOutput": {
+            "type": "object",
+            "properties": {
+                "gadget": {
+                    "location": "json",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
