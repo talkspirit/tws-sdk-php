@@ -2,10 +2,10 @@
     "operations": {
         "getPosts": {
             "httpMethod": "Get",
-            "uri": "discussions/{discussion-id}/posts?{option}",
+            "uri": "discussions/{discussionId}/posts?{option}",
             "summary": "Posts - Get posts",
             "parameters": {
-                "discussion-id": {
+                "discussionId": {
                     "location": "uri",
                     "description": "Discussion to retrieve by ID",
                     "required": true
@@ -31,15 +31,15 @@
         },
         "getPost": {
             "httpMethod": "Get",
-            "uri": "discussions/{discussion-id}/posts/{post-id}",
+            "uri": "discussions/{discussionId}/posts/{postId}",
             "summary": "Posts - Get posts",
             "parameters": {
-                "discussion-id": {
+                "discussionId": {
                     "location": "uri",
                     "description": "Discussion to retrieve by ID",
                     "required": true
-                },
-                "post-id": {
+                ,
+                "postId": {
                     "location": "uri",
                     "description": "Post to retrieve by ID",
                     "required": true

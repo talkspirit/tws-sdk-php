@@ -1,6 +1,6 @@
 {
     "operations": {
-        "postDiscussions": {
+        "postDiscussion": {
             "httpMethod": "POST",
             "uri": "discussions/default",
             "summary": "Discussions - Create a discussion",

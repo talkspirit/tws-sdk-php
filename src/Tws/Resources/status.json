@@ -1,0 +1,25 @@
+{
+    "operations": {
+        "getStatus": {
+            "httpMethod": "GET",
+            "uri": "status",
+            "summary": "Get info about some figures of the instance",
+            "responseClass": "GetStatusOutput"
+        }
+    },
+    "models": {
+        "GetStatusOutput": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
