@@ -2,10 +2,10 @@
     "operations": {
         "getPosts": {
             "httpMethod": "Get",
-            "uri": "discussions/{discussion-id}/posts?{option}",
+            "uri": "discussions/{discussionId}/posts?{option}",
             "summary": "Posts - Get posts",
             "parameters": {
-                "discussion-id": {
+                "discussionId": {
                     "location": "uri",
                     "description": "Discussion to retrieve by ID",
                     "required": true
@@ -30,19 +30,51 @@
             }
         },
         "getPost": {
-            "httpMethod": "Get",
-            "uri": "discussions/{discussion-id}/posts/{post-id}",
+            "httpMethod": "GET",
+            "uri": "discussions/{discussionId}/posts/{postId}",
             "summary": "Posts - Get posts",
             "parameters": {
-                "discussion-id": {
+                "discussionId": {
                     "location": "uri",
                     "description": "Discussion to retrieve by ID",
                     "required": true
                 },
-                "post-id": {
+                "postId": {
                     "location": "uri",
                     "description": "Post to retrieve by ID",
                     "required": true
+                }
+            }
+        },
+        "postPost": {
+            "httpMethod": "POST",
+            "uri": "discussions/{discussionId}/posts/default",
+            "summary": "Posts - Create a post",
+            "responseClass": "DiscussionPostOutput",
+            "parameters": {
+                "discussionId": {
+                    "location": "uri",
+                    "description": "discussion to posting",
+                    "required": true
+                },
+                "post": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "models": {
+        "DiscussionPostOutput": {
+            "type": "object",
+            "properties": {
+                "post": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
                 }
             }
         }

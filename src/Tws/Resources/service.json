@@ -5,20 +5,13 @@
     "description": "Tws is an API that allows you to use TalkSpirit API",
     "includes":[
         "activitystream.json",
-        "application.json",
         "gadget.json",
         "discussion.json",
         "graph.json",
         "group.json",
         "media.json",
         "post.json",
-        "user.json"
-    ],
-    "operations": {
-        "status": {
-            "httpMethod": "GET",
-            "uri": "status",
-            "summary": "Tetreez Information status"
-        }
-    }
+        "user.json",
+        "status.json"
+    ]
 }
