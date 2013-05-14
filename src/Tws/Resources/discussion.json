@@ -11,23 +11,6 @@
                     "type": "array"
                 }
             }
-        },
-        "postDiscussionsPost": {
-            "httpMethod": "POST",
-            "uri": "discussions/{discussionId}/posts/default",
-            "summary": "Posts - Create a post",
-            "responseClass": "DiscussionPostOutput",
-            "parameters": {
-                "discussionId": {
-                    "location": "uri",
-                    "description": "discussion to posting",
-                    "required": true
-                },
-                "post": {
-                    "location": "json",
-                    "type": "array"
-                }
-            }
         }
     },
     "models": {
@@ -43,20 +26,6 @@
                     "type": "integer"
                 }
             }
-        },
-        "DiscussionPostOutput": {
-            "type": "object",
-            "properties": {
-                "post": {
-                    "location": "json",
-                    "type": "string"
-                },
-                "statusCode": {
-                    "location": "statusCode",
-                    "type": "integer"
-                }
-            }
-
         }
     }
 }
