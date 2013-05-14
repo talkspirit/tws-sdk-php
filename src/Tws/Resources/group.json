@@ -1,0 +1,49 @@
+{
+    "operations": {
+        "postGroup": {
+            "httpMethod": "POST",
+            "uri": "groups/default",
+            "summary": "Groups - Add a group",
+            "responseClass": "GroupOutput",
+            "parameters": {
+                "group": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        },
+        "postGroupJoin": {
+            "httpMethod": "POST",
+            "uri": "users/{userId}/groups/default",
+            "summary": "Groups - Join a group",
+            "responseClass": "GroupOutput",
+            "parameters": {
+                "userId": {
+                    "location": "uri",
+                    "description": "User join group",
+                    "required": true
+                },
+                "group": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "models": {
+        "GroupOutput": {
+            "type": "object",
+            "properties": {
+                "group": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "operations": {
+        "postDiscussions": {
+            "httpMethod": "POST",
+            "uri": "discussions/default",
+            "summary": "Discussions - Create a discussion",
+            "responseClass": "DiscussionOutput",
+            "parameters": {
+                "discussion": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        },
+        "postDiscussionsPost": {
+            "httpMethod": "POST",
+            "uri": "discussions/{discussionId}/posts/default",
+            "summary": "Posts - Create a post",
+            "responseClass": "DiscussionPostOutput",
+            "parameters": {
+                "discussionId": {
+                    "location": "uri",
+                    "description": "discussion to posting",
+                    "required": true
+                },
+                "post": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "models": {
+        "DiscussionOutput": {
+            "type": "object",
+            "properties": {
+                "group": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+        },
+        "DiscussionPostOutput": {
+            "type": "object",
+            "properties": {
+                "post": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+
+        }
+    }
+}
