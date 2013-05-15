@@ -1,0 +1,41 @@
+{
+    "operations": {
+        "postComment": {
+            "httpMethod": "POST",
+            "uri": "/discussions/{discussionId}/posts/{postId}/comments/default",
+            "summary": "Comments - Create a comment",
+            "responseClass": "CommentOutput",
+            "parameters": {
+                "discussionId": {
+                    "location": "uri",
+                    "description": "discussion to posting",
+                    "required": true
+                },
+                "postId": {
+                    "location": "uri",
+                    "description": "post to comment",
+                    "required": true
+                },
+                "comment": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "models": {
+        "CommentOutput": {
+            "type": "object",
+            "properties": {
+                "comment": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
