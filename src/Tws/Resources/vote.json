@@ -2,7 +2,7 @@
     "operations": {
         "postVote": {
             "httpMethod": "POST",
-            "uri": "'discussions/{discussionId}/posts/{postId}/ratings/default",
+            "uri": "discussions/{discussionId}/posts/{postId}/ratings/default",
             "summary": "Votes on a post - Create a vote",
             "responseClass": "VoteOutput",
             "parameters": {
@@ -16,7 +16,7 @@
                     "description": "post to comment",
                     "required": true
                 },
-                "badge": {
+                "rate": {
                     "location": "json",
                     "type": "array"
                 }

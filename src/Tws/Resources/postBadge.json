@@ -2,7 +2,7 @@
     "operations": {
         "postPostBadge": {
             "httpMethod": "POST",
-            "uri": "'/discussions/{discussionId}/posts/{postId}/badges/default",
+            "uri": "discussions/{discussionId}/posts/{postId}/badges/default",
             "summary": "Gamification - Reward a post with a badge",
             "responseClass": "BadgesOutput",
             "parameters": {
