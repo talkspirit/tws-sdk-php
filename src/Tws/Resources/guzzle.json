@@ -5,7 +5,6 @@
     "description": "Tws is an API that allows you to use TalkSpirit API",
     "includes":[
         "activitystream.json",
-        "auth.json",
         "comment.json",
         "gadget.json",
         "discussion.json",

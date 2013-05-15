@@ -61,7 +61,7 @@ class TwsConnect
 
             return $token;
         } catch (ClientErrorResponseException $e) {
-            throw new TwsConnectException('TwsClient: Authentication failed bad login/pwd.');
+            throw new TwsConnectException('TwsClient: Authentication failed bad login/pwd. :' . $e);
         }
     }
 
