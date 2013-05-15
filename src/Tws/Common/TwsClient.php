@@ -18,11 +18,11 @@ class TwsClient extends Client
     /**
      * Factory method to create a new TwsClient
      *
-     * @param array $config configuration data
+     * @param mixed $config configuration data
      *
      * @return self
      */
-    public static function factory(array $config = array())
+    public static function factory($config = array())
     {
         $default  = array('base_url' => $config['api_url']);
         $required = array('consumer_key', 'base_url');
