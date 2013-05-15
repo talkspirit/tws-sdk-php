@@ -1,0 +1,26 @@
+{
+    "operations": {
+        "postPostBadge": {
+            "httpMethod": "POST",
+            "uri": "'/discussions/{discussionId}/posts/{postId}/badges/default",
+            "summary": "Gamification - Reward a post with a badge",
+            "responseClass": "BadgesOutput",
+            "parameters": {
+                "discussionId": {
+                    "location": "uri",
+                    "description": "discussion to posting",
+                    "required": true
+                },
+                "postId": {
+                    "location": "uri",
+                    "description": "post to comment",
+                    "required": true
+                },
+                "badge": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "operations": {
+        "postVote": {
+            "httpMethod": "POST",
+            "uri": "'discussions/{discussionId}/posts/{postId}/ratings/default",
+            "summary": "Votes on a post - Create a vote",
+            "responseClass": "VoteOutput",
+            "parameters": {
+                "discussionId": {
+                    "location": "uri",
+                    "description": "discussion to posting",
+                    "required": true
+                },
+                "postId": {
+                    "location": "uri",
+                    "description": "post to comment",
+                    "required": true
+                },
+                "badge": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "models": {
+        "VoteOutput": {
+            "type": "object",
+            "properties": {
+                "rate": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

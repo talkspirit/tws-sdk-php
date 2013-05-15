@@ -12,12 +12,10 @@ use Tws\Plugin\Auth\AuthPlugin;
  * Tetreez Connector
  *
  * @see http://guzzlephp.org/tour/building_services.html
- *
  * @see https://github.com/klaussilveira/phpcs-psr
  */
 class TwsConnect
 {
-
     private $config;
 
     /**

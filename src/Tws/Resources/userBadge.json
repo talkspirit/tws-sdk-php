@@ -1,0 +1,31 @@
+{
+    "operations": {
+        "postBadge": {
+            "httpMethod": "POST",
+            "uri": "service/badges/default",
+            "summary": "Gamification - Add a badge",
+            "responseClass": "BadgesOutput",
+            "parameters": {
+                "badge": {
+                    "location": "json",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "models": {
+        "BadgesOutput": {
+            "type": "object",
+            "properties": {
+                "badge": {
+                    "location": "json",
+                    "type": "string"
+                },
+                "statusCode": {
+                    "location": "statusCode",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
