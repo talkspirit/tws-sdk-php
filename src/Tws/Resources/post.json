@@ -4,6 +4,7 @@
             "httpMethod": "Get",
             "uri": "discussions/{discussionId}/posts?{option}",
             "summary": "Posts - Get posts",
+            "responseClass": "PostOutput",
             "parameters": {
                 "discussionId": {
                     "location": "uri",
@@ -25,6 +26,24 @@
                 "option": {
                     "location": "uri",
                     "description": "additional parameters see documentation",
+                    "required": false
+                },
+                "limit": {
+                    "location": "query",
+                    "type": "string",
+                    "description": "Limit",
+                    "required": false
+                },
+                "category": {
+                    "location": "query",
+                    "type": "string",
+                    "description": "type corresponds to the type of post in the discussion or the id of the addon: ideas, problemes, questions, articles (for the type of post in the discussion), microblog",
+                    "required": false
+                },
+                "sort": {
+                    "location": "query",
+                    "type": "string",
+                    "description": "lastdate: last activity in the item sort by activity otherwise",
                     "required": false
                 }
             }
@@ -50,7 +69,7 @@
             "httpMethod": "POST",
             "uri": "discussions/{discussionId}/posts/default",
             "summary": "Posts - Create a post",
-            "responseClass": "DiscussionPostOutput",
+            "responseClass": "PostOutput",
             "parameters": {
                 "discussionId": {
                     "location": "uri",
@@ -65,7 +84,7 @@
         }
     },
     "models": {
-        "DiscussionPostOutput": {
+        "PostOutput": {
             "type": "object",
             "properties": {
                 "post": {
