@@ -7,6 +7,7 @@ use Guzzle\Service\Client;
 use Guzzle\Service\Description\ServiceDescription;
 use Tws\Plugin\Auth\AuthPlugin;
 use Tws\Common\TwsConnect;
+use Tws\Common\TwsRequestFactory;
 
 /**
  * @see http://guzzlephp.org/tour/building_services.html
@@ -28,6 +29,7 @@ class TwsClient extends Client {
         $config = Collection::fromConfig($config, $default, $required);
 
         $client = new self($config->get('base_url'), $config);
+        $client->setRequestFactory(new TwsRequestFactory());
         // Attach a service description to the client
         $description = ServiceDescription::factory(__DIR__ . '/../Resources/service.json');
         $client->setDescription($description);

@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-tws-sdk-php.sublime-project
-tws-sdk-php.sublime-workspace
-=======
 .tags_sorted_by_file
 vendor
-tws-sdk-php.sublime-project
 .tags
-tws-sdk-php.sublime-workspace
 composer.lock
->>>>>>> talkspirit/master
