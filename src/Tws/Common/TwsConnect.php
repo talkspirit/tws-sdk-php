@@ -52,7 +52,7 @@ class TwsConnect
      *
      * @throws TwsConnectException If error
      */
-    public function connect($login, $pwd)
+    public function connect($login, $pwd = '')
     {
         $client = TwsClient::factory($this->config);
         try {

@@ -13,7 +13,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://git.talkspirit.net/tws-sdk-php.git"
+            "url": "http://git.talkspirit.net/tws-sdk-php.git"
         }
     ],
     "require": {
